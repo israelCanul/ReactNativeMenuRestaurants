@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     View,
     Text,
@@ -9,18 +10,16 @@ import {
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.props.navigation.setOptions({ title: 'Updated!' })
+        // this.props.navigation.setOptions({ title: 'Updated!' })
     }
     render() {
         return (
             <View style={styles.container}>
                 <Text >
                     chale borre tod
+                    <Icon name="bars" size={30} color="#900" />
                 </Text>
-                <Button
-                    title="Update the title"
 
-                />
             </View>
         )
     }

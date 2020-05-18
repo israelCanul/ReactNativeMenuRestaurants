@@ -1,39 +1,22 @@
 import React from 'react';
-import Home from './src/App';
-import {
-  Button
-} from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createStackNavigator();
+import { ProfileScreen, HomeScreen } from './src/Pages'
+
+const Drawer = createDrawerNavigator()
 
 class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            options={{
-              title: 'My whome'
-              , headerRight: () => (
-                <Button
-                  onPress={() => alert('This is a button!')}
-                  title="Info"
-                  color="#fff"
-                />
-              )
-            }}
-            name="Perrito"
-            component={Home} />
-        </Stack.Navigator>
+        <Drawer.Navigator initialRouteName="Home">
+          <Drawer.Screen name="Home" component={HomeScreen} />
+          <Drawer.Screen name="Profile" component={ProfileScreen} />
+        </Drawer.Navigator>
       </NavigationContainer>
-
     );
   }
-};
-
-
-
+}
 
 export default App;

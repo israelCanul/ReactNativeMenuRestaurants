@@ -4,6 +4,8 @@ import {
     TouchableOpacity,
     StyleSheet
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 class NavigationDrawerStructure extends Component {
     toggleDrawer = () => {
@@ -14,9 +16,7 @@ class NavigationDrawerStructure extends Component {
             <View style={styles.container}>
                 <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
                     {/* Donute Button Image */}
-                    <Image
-
-                    />
+                    <Icon name="rocket" size={25} color="#900" />
                 </TouchableOpacity>
             </View>
         );
