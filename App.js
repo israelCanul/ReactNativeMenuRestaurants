@@ -1,22 +1,24 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-
-import { ProfileScreen, HomeScreen } from './src/Pages'
-
-const Drawer = createDrawerNavigator()
+import {Text, StyleSheet, View} from 'react-native';
 
 class App extends React.Component {
   render() {
     return (
-      <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="Profile" component={ProfileScreen} />
-        </Drawer.Navigator>
-      </NavigationContainer>
+      <View style={styles.container}>
+        <Text style={styles.text}>Este es mi texto de inicio de curso</Text>
+      </View>
     );
   }
 }
-
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'black',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: 'white',
+  },
+});
 export default App;
